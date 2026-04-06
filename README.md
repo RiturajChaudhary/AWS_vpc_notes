@@ -47,11 +47,13 @@
 ## 5️⃣ Route Tables
 
 **Definition:** Route tables control the network traffic routing within the VPC. Each subnet must be associated with a route table.
+# 🔹 Route Table Associations (Public vs Private)
 
-| Route Table | Type         | Use                          | Association                                    |
-|-------------|--------------|------------------------------|------------------------------------------------|
-| Public RT   | Main RT      | Public Subnet → IGW          | Explicitly associated with Public Subnet       |
-| Private RT  | Secondary RT | Private Subnet → NAT Gateway | Used implicitly (without explicit association) |
+| Subnet Type | Subnet Name            | Subnet ID                  | IPv4 CIDR        | Route Table Used                     |
+|-------------|------------------------|----------------------------|------------------|--------------------------------------|
+| Private     | susigugh-privatesubnet | `subnet-09709c273630ecb2a` | `192.168.2.0/24` | Custom Route Table (NAT Gateway)     |
+| Public      | susigugh-publicsubnet  | `subnet-060f1af64a367051d` | `192.168.1.0/24` | Main Route Table (Internet Gateway)  |
+
 
 **Notes:**
 - Main route table is Public RT
